@@ -5,13 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class AttractedBody : InteractiveBody, IAttracted
+public class AttractedBody : ExplosiveBody, IAttracted
 {
     public const float G = 0.00667f;
     public void Attract(float mass, float dist, Vector2 dir)
     {
-        float F = G * ((rb.mass * mass) / dist);
+        float F = G * (rb.mass * mass / dist);
         rb.AddForce(F * -dir);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.collider.TryGetComponent<ExplosiveBody>(out var body))
+            if (body.Mass >= rb.mass) Destroy(gameObject);
     }
 }
 

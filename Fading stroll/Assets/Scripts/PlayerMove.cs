@@ -32,16 +32,7 @@ public class PlayerMove : InteractiveBody
 
         rb.AddForce(movement, ForceMode2D.Force);
     }
-    private void OnEnable()
-    {
-        AddFixedUpdate();
-    }
-    private void OnDisable()
-    {
-        RemoveFixedUpdate();
-    }
-    private void OnDestroy()
-    {
-        RemoveFixedUpdate();
-    }
+    private void OnEnable() => AddFixedUpdate();
+    private void OnDisable() => RemoveFixedUpdate();
+    private void OnDestroy() => RemoveFixedUpdate();
 }
