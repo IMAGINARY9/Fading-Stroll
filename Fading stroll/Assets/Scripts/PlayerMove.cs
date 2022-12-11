@@ -12,6 +12,7 @@ public class PlayerMove : InteractiveBody
     [SerializeField] private Joystick _joystick;
 
     private Vector2 _dir;
+    public Vector2 Path => rb.velocity.normalized;
     public override void OnFixedTick()
     {
         _dir.x = Input.GetAxisRaw("Horizontal");

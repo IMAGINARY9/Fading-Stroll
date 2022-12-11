@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttractiveBody : AttractedBody
+public class AttractiveBody : InteractiveBody
 {
     [SerializeField] private Overlap _attractionZone;
 
@@ -19,6 +19,7 @@ public class AttractiveBody : AttractedBody
             {
                 var dist = Vector2.Distance(obj.transform.position, transform.position);
                 var dir = obj.transform.position - transform.position;
+                if (rb == null) return;
                 entity.Attract(rb.mass, dist, dir);
             }
 

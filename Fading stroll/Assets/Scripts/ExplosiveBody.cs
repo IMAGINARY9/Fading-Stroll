@@ -7,10 +7,11 @@ public class ExplosiveBody : InteractiveBody
     public float Mass => rb.mass;
 
     [System.Obsolete]
-    private void OnDestroy()
+    protected void Explode()
     {
         var particles = Instantiate(destroyParticles, transform.position, Quaternion.identity);
         particles.Play();
         Destroy(particles.gameObject, particles.startLifetime);
+        Destroy(gameObject);
     }
 }
