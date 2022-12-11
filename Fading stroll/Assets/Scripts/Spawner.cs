@@ -11,12 +11,11 @@ public class Spawner : MonoCache
 
     void Start()
     {
-        //var min = Camera.main.ViewportToWorldPoint(Vector2.zero);
-        //var max = Camera.main.ViewportToWorldPoint(Vector2.one);
+        var startSize = _safeSize * 5f;
         for (int i = 0; i < _startCount; i++)
         {
-            Vector2 newPos = new(Random.Range(-_size, _size),
-                Random.Range(-_size, _size));
+            Vector2 newPos = new(Random.Range(-startSize, startSize),
+                Random.Range(-startSize, startSize));
             if(Mathf.Abs(newPos.x) < _safeSize || Mathf.Abs(newPos.y) < _safeSize)
             {
                 i--; 

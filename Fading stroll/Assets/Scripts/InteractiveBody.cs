@@ -7,8 +7,10 @@ public abstract class InteractiveBody : MonoCache
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        OnAwake();
         rb.AddForce(Vect.RandomVector * Random.Range(1f, transform.localScale.z * 10f), ForceMode2D.Impulse);
-        LateStart();
+        Invoke(nameof(LateAwake), 0.1f);
     }
-    protected virtual void LateStart() { }
+    protected virtual void OnAwake() { }
+    protected virtual void LateAwake() { }
 }

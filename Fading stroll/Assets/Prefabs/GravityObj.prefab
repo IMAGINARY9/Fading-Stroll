@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2518551688831125758}
   - component: {fileID: 2518551688831125754}
   - component: {fileID: 2518551688831125755}
+  - component: {fileID: 997632606816530192}
   m_Layer: 0
   m_Name: GravityObj
   m_TagString: Untagged
@@ -113,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2518551688831125745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.63, y: -1.61, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -204,7 +205,7 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2518551688831125745}
   m_Enabled: 1
-  m_Density: 20
+  m_Density: 10
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
@@ -238,6 +239,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyParticles: {fileID: 632130766455905444, guid: 02ceea3528ca87b439b384c2e205e5e2, type: 3}
+--- !u!114 &997632606816530192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518551688831125745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8e1a89b3fae8e42a5881486ccabefe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sizeLim: {x: 1, y: 3}
+  _densityLim: {x: 5, y: 15}
 --- !u!1 &2518551689383015844
 GameObject:
   m_ObjectHideFlags: 0

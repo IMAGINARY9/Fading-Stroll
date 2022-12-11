@@ -637,7 +637,7 @@ Camera:
   far clip plane: 1000
   field of view: 110
   orthographic: 1
-  orthographic size: 0.0000001
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -661,7 +661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0658141e-14, y: 5.3290705e-15, z: -10}
+  m_LocalPosition: {x: -0.0000011920929, y: 0.00000059604645, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -951,7 +951,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807487658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60, y: 0, z: 0}
+  m_LocalPosition: {x: 55, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1670264825}
-  _distance: 60
+  _distance: 55
 --- !u!114 &807487662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,8 +1039,8 @@ MonoBehaviour:
   _prefabs:
   - {fileID: 3074849289859420601, guid: 0da459a23e823d0499be3af55ca8a3fa, type: 3}
   - {fileID: 2518551688831125745, guid: 1f3292c52282f3846afce4cb9544ac21, type: 3}
-  _size: 30
-  _safeSize: 5
+  _size: 20
+  _safeSize: 10
   _startCount: 20
   _tickRate: 0.5
 --- !u!1 &815460640
@@ -1492,7 +1492,7 @@ MonoBehaviour:
   m_Follow: {fileID: 232637927}
   m_Lens:
     FieldOfView: 110
-    OrthographicSize: 0.0000001
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1516,7 +1516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254331803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0658141e-14, y: 5.3290705e-15, z: -10}
+  m_LocalPosition: {x: -0.0000011920929, y: 0.00000059604645, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858d9d2c97425db40aa4ab46e59cddba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _acceleration: 15
+  _acceleration: 10
   _decceleration: 2
   _velPower: 0.8
   _speed: 5

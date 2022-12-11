@@ -6,9 +6,9 @@ public class AttractiveBody : InteractiveBody
 {
     [SerializeField] private Overlap _attractionZone;
 
-    protected override void LateStart()
+    protected override void LateAwake()
     {
-        _attractionZone.Radius = rb.mass * transform.localScale.z * 0.5f;
+        _attractionZone.Radius = (rb.mass * 0.1f) + (transform.localScale.z * 10f);
     }
     public override void OnTick()
     {

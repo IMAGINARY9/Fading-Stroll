@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 3074849289859420602}
   - component: {fileID: 3074849289859420603}
   - component: {fileID: 3074849289859420600}
+  - component: {fileID: -2633948801629606838}
   m_Layer: 0
   m_Name: GravitableObj
   m_TagString: Untagged
@@ -112,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3074849289859420601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 2.24, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -222,3 +223,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyParticles: {fileID: 632130766455905444, guid: 02ceea3528ca87b439b384c2e205e5e2, type: 3}
+--- !u!114 &-2633948801629606838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074849289859420601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8e1a89b3fae8e42a5881486ccabefe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sizeLim: {x: 0.25, y: 0.75}
+  _densityLim: {x: 2.5, y: 7.5}
