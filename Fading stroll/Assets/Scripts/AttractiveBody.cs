@@ -6,6 +6,10 @@ public class AttractiveBody : InteractiveBody
 {
     [SerializeField] private Overlap _attractionZone;
 
+    protected override void LateStart()
+    {
+        _attractionZone.Radius = rb.mass * transform.localScale.z * 0.5f;
+    }
     public override void OnTick()
     {
         Collider2D[] objs = _attractionZone.GetColliders();
