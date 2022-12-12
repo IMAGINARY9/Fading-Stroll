@@ -236,4 +236,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sizeLim: {x: 0.25, y: 0.75}
-  _densityLim: {x: 2.5, y: 7.5}
+  _densityLim: {x: 2.5, y: 12.5}
