@@ -99,9 +99,8 @@ GameObject:
   - component: {fileID: 2518551688831125754}
   - component: {fileID: 2518551688831125755}
   - component: {fileID: 997632606816530192}
-  - component: {fileID: 1651011128944795295}
   m_Layer: 0
-  m_Name: GravityObj
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +165,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
+  m_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -226,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attractionZone: {fileID: 2518551689383015845}
+  _attractiveParticles: {fileID: 7543661096927793252, guid: 40f3842e26bcf0a44b6c4300187ae08e, type: 3}
 --- !u!114 &2518551688831125755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,20 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sizeLim: {x: 1, y: 3}
-  _densityLim: {x: 15, y: 35}
---- !u!114 &1651011128944795295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2518551688831125745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fb405325b7fc574ab6e0f7e4530c19c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _light: {fileID: 6720853052247752479, guid: bde0aa5a552e2444ca03306c795b3b14, type: 3}
+  _densityLim: {x: 10, y: 15}
 --- !u!1 &2518551689383015844
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 public abstract class InteractiveBody : MonoCache
 {
     protected Rigidbody2D rb;
+    public float Mass => rb.mass;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

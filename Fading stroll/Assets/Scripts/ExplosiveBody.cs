@@ -4,7 +4,6 @@ using UnityEngine;
 public class ExplosiveBody : InteractiveBody
 {
     [SerializeField] protected ParticleSystem destroyParticles;
-    public float Mass => rb.mass;
 
     [System.Obsolete]
     protected void Explode()

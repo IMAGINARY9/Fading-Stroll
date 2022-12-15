@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class AttractedBody : ExplosiveBody, IAttracted
 {
-    public const float G = 0.000667f;
+    public const float G = 0.00667f;
     public void Attract(float mass, float dist, Vector2 dir)
     {
         if (rb == null) return;
@@ -18,7 +18,7 @@ public class AttractedBody : ExplosiveBody, IAttracted
     [Obsolete]
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.collider.TryGetComponent<ExplosiveBody>(out var body))
+        if (col.collider.TryGetComponent<InteractiveBody>(out var body))
             if (body.Mass >= rb.mass) Explode();
     }
 }

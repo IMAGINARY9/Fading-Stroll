@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Spawner : MonoCache
 {
-    [SerializeField] private GameObject[] _prefabs;
+    [SerializeField] private Factory _factory;
     [SerializeField] private float _size;
     [SerializeField] private float _safeSize;
     [SerializeField] private int _startCount;
@@ -40,9 +40,10 @@ public class Spawner : MonoCache
 
     private void Spawn(Vector2 pos)
     {
-        GameObject obj = _prefabs[Random.Range(0, _prefabs.Length)];
+        GameObject obj = _factory.GetBody();
         var newObj = Instantiate(obj, pos, Quaternion.identity);
         Destroyer.allDestroy.Add(newObj);
     }
+
 
 }

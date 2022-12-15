@@ -5,12 +5,25 @@ using UnityEngine;
 public class AttractiveBody : InteractiveBody
 {
     [SerializeField] private Overlap _attractionZone;
+    [SerializeField] private ParticleSystem _attractiveParticles;
 
     protected override void LateAwake()
     {
-        _attractionZone.Radius = (rb.mass * 0.1f) + (transform.localScale.z * 10f);
+        var radius = (rb.mass * 0.1f) + (transform.localScale.z * 10f);
+        _attractionZone.Radius = radius;
+
+        Particles(radius);
     }
-    public override void OnTick()
+
+    private void Particles(float radius)
+    {
+        var particles = Instantiate(_attractiveParticles, transform.position, Quaternion.identity, transform);
+        var pShape = particles.shape;
+        pShape.radius = radius;
+        particles.Play();
+    }
+
+    public override void OnFixedTick()
     {
         Collider2D[] objs = _attractionZone.GetColliders();
         if (objs == null) return;
@@ -29,6 +42,10 @@ public class AttractiveBody : InteractiveBody
 
         }
     }
-    
+
+    private void OnEnable() => AddFixedUpdate();
+    private void OnDisable() => RemoveFixedUpdate();
+    private void OnDestroy() => RemoveFixedUpdate();
+
 }
 
