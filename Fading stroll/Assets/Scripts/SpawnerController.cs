@@ -7,7 +7,8 @@ public class SpawnerController : MonoCache
     [SerializeField] private float _distance;
     public override void OnTick()
     {
-        if(_player.Path != Vector2.zero)
-            transform.localPosition = _player.Path.normalized * _distance;
+        if (_player == null) { Destroy(gameObject); return; }
+        if (_player.Path != Vector2.zero)
+            transform.position = _player.transform.position + (Vector3)_player.Path * _distance;
     }
 }

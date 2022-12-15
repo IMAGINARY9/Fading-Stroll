@@ -23,7 +23,11 @@ public class AttachGameObjectsToParticles : MonoBehaviour
         int count = m_ParticleSystem.GetParticles(m_Particles);
 
         while (m_Instances.Count < count)
-            m_Instances.Add(Instantiate(m_Prefab, m_ParticleSystem.transform));
+        {
+            var instObj = Instantiate(m_Prefab, m_ParticleSystem.transform);
+            instObj.layer = m_ParticleSystem.gameObject.layer;
+            m_Instances.Add(instObj);
+        }
 
         bool worldSpace = (m_ParticleSystem.main.simulationSpace == ParticleSystemSimulationSpace.World);
         for (int i = 0; i < m_Instances.Count; i++)

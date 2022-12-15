@@ -7,11 +7,11 @@ using UnityEngine;
 
 public class AttractedBody : ExplosiveBody, IAttracted
 {
-    public const float G = 0.00667f;
+    public const float G = 0.0667f;
     public void Attract(float mass, float dist, Vector2 dir)
     {
         if (rb == null) return;
-        float F = G * (rb.mass * mass / dist);
+        float F = G * rb.mass * mass / (dist * dist);
         rb.AddForce(F * -dir);
     }
 
