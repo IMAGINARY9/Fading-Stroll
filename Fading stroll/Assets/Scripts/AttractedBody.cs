@@ -19,7 +19,16 @@ public class AttractedBody : ExplosiveBody, IAttracted
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.collider.TryGetComponent<InteractiveBody>(out var body))
-            if (body.Mass >= rb.mass) Explode();
+            if (body.Mass >= rb.mass)
+            {
+                if (body.TryGetComponent<ScoreCollector>(out var collector))
+                    collector.AddScore(rb.mass);
+
+                Explode();
+            }
+        
     }
+
+
 }
 
