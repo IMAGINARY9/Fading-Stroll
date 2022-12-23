@@ -23,7 +23,7 @@ public class ExplosiveBody : InteractiveBody
         var pBurst = new ParticleSystem.Burst(0f, (short)(Mass * 100));
         particles.emission.SetBurst(0, pBurst);
 
-        particles.startSize = scale * 0.1f;
+        particles.startSize = scale * 0.2f;
 
         particles.Play();
         Destroy(particles.gameObject, particles.startLifetime);

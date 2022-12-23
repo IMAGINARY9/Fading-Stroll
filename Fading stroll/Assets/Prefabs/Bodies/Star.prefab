@@ -226,7 +226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attractionZone: {fileID: 2518551689383015845}
-  _attractiveParticles: {fileID: 7543661096927793252, guid: 40f3842e26bcf0a44b6c4300187ae08e, type: 3}
 --- !u!114 &2518551688831125755
 MonoBehaviour:
   m_ObjectHideFlags: 0

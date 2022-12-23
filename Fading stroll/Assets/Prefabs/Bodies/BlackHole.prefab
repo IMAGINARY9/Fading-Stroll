@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 2518551688831125759}
   - component: {fileID: 2518551688831125758}
   - component: {fileID: 2518551688831125754}
+  - component: {fileID: 9000993904346443648}
   - component: {fileID: 997632606816530192}
   m_Layer: 0
   m_Name: BlackHole
@@ -224,6 +225,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attractionZone: {fileID: 2518551689383015845}
+--- !u!114 &9000993904346443648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518551688831125745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c78135f3e0a5c744be9c7023f6bfd51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _attractiveParticles: {fileID: 7543661096927793252, guid: 40f3842e26bcf0a44b6c4300187ae08e, type: 3}
 --- !u!114 &997632606816530192
 MonoBehaviour:

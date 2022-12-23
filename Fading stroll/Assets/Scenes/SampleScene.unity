@@ -331,7 +331,7 @@ Camera:
   far clip plane: 1000
   field of view: 110
   orthographic: 1
-  orthographic size: 50
+  orthographic size: 0.000001
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -355,7 +355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000047683716, y: 0.000002861023, z: -10}
+  m_LocalPosition: {x: -1.1368684e-13, y: 5.684342e-14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5970,7 +5970,7 @@ MonoBehaviour:
   m_Follow: {fileID: 232637927}
   m_Lens:
     FieldOfView: 110
-    OrthographicSize: 50
+    OrthographicSize: 0.000001
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -5994,7 +5994,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254331803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000047683716, y: 0.000002861023, z: -10}
+  m_LocalPosition: {x: -1.1368684e-13, y: 5.684342e-14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11050,6 +11050,7 @@ GameObject:
   - component: {fileID: 1670264825}
   - component: {fileID: 1670264829}
   - component: {fileID: 1670264826}
+  - component: {fileID: 1670264830}
   - component: {fileID: 1670264828}
   m_Layer: 0
   m_Name: Player
@@ -11119,7 +11120,7 @@ Transform:
   m_GameObject: {fileID: 1670264820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1009674198}
@@ -11137,7 +11138,7 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670264820}
   m_Enabled: 1
-  m_Density: 30
+  m_Density: 10
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
@@ -11157,7 +11158,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 212.05751
+  m_Mass: 7.853982
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -11178,12 +11179,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858d9d2c97425db40aa4ab46e59cddba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _acceleration: 300
+  _acceleration: 10
   _decceleration: 2
   _velPower: 0.8
   _speed: 5
   _joystick: {fileID: 1108818257}
-  Speed: {x: 0, y: 0}
 --- !u!114 &1670264826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11197,7 +11197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attractionZone: {fileID: 83381519}
-  _attractiveParticles: {fileID: 7543661096927793252, guid: 40f3842e26bcf0a44b6c4300187ae08e, type: 3}
 --- !u!114 &1670264828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11224,6 +11223,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyParticles: {fileID: 632130766455905444, guid: 02ceea3528ca87b439b384c2e205e5e2, type: 3}
+--- !u!114 &1670264830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670264820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c78135f3e0a5c744be9c7023f6bfd51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attractiveParticles: {fileID: 7543661096927793252, guid: 40f3842e26bcf0a44b6c4300187ae08e, type: 3}
 --- !u!1 &2087611642
 GameObject:
   m_ObjectHideFlags: 0

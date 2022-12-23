@@ -9,7 +9,14 @@ public class FPSCounter : MonoCache
     private float _updateRate;
     public int FPS { get; private set; }
 
-    private void Start() => _updateRate = _updateUIRate;
+    private void Start()
+    {
+#if UNITY_ANDROID
+        //QualitySettings.vSyncCount = 0;
+        //Application.targetFrameRate = 300;
+#endif
+        _updateRate = _updateUIRate;
+    }
     public override void OnTick()
     {
         if((_updateRate -= Time.deltaTime) <= 0)

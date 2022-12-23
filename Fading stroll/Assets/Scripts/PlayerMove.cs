@@ -15,12 +15,14 @@ public class PlayerMove : InteractiveBody
     public Vector2 Path => rb.velocity.normalized;
     public override void OnFixedTick()
     {
-        _dir.x = Input.GetAxisRaw("Horizontal");
-        _dir.y = Input.GetAxisRaw("Vertical");
 
+#if UNITY_ANDROID
         //_dir.x = _joystick.Horizontal;
         //_dir.y = _joystick.Vertical;
-
+#else
+        _dir.x = Input.GetAxisRaw("Horizontal");
+        _dir.y = Input.GetAxisRaw("Vertical");
+#endif
         Move();
     }
 
