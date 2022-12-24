@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(ParticleSystem))]
 public class AttachGameObjectsToParticles : MonoBehaviour
@@ -25,7 +26,6 @@ public class AttachGameObjectsToParticles : MonoBehaviour
         while (m_Instances.Count < count)
         {
             var instObj = Instantiate(m_Prefab, m_ParticleSystem.transform);
-            instObj.layer = m_ParticleSystem.gameObject.layer;
             m_Instances.Add(instObj);
         }
 

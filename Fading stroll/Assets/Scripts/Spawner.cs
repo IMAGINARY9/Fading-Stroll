@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Spawner : MonoCache
 {
+    [SerializeField] private Transform _container;
     [SerializeField] private Factory _factory;
     [SerializeField] private float _size;
     [SerializeField] private float _safeSize;
@@ -41,7 +42,7 @@ public class Spawner : MonoCache
     private void Spawn(Vector2 pos)
     {
         GameObject obj = _factory.GetBody();
-        var newObj = Instantiate(obj, pos, Quaternion.identity);
+        var newObj = Instantiate(obj, pos, Quaternion.identity, _container);
         Destroyer.allDestroy.Add(newObj);
     }
 
