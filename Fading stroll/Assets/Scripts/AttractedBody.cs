@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class AttractedBody : ExplosiveBody, IAttracted
 {
-    public const float G = 0.0667f;
+    public const float G = 0.0778f;
     public void Attract(float mass, float dist, Vector2 dir)
     {
         if (rb == null) return;

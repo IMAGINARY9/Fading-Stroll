@@ -10,7 +10,7 @@ public class AttractiveBodyParticles : InteractiveBody
         var particles = Instantiate(_attractiveParticles, transform.position, Quaternion.identity, transform);
 
         var pMain = particles.main;
-        pMain.startSize = radius * 0.01f;
+        pMain.startSize = radius * 0.0125f;
         pMain.startLifetime = radius * 0.1f;
         pMain.startSpeed = -radius * 0.5f;
 

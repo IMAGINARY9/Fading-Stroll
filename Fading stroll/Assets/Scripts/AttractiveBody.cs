@@ -7,7 +7,7 @@ public class AttractiveBody : InteractiveBody
     [SerializeField] private Overlap _attractionZone;
     protected override void LateAwake()
     {
-        var radius = (rb.mass * 0.1f) + (transform.localScale.z * 10f);
+        var radius = Mathf.Log(rb.mass, 3) * Mathf.Log(transform.localScale.z * 100f, 2);
         _attractionZone.Radius = radius;
 
 

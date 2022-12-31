@@ -17,8 +17,8 @@ public class PlayerMove : InteractiveBody
     {
 
 #if UNITY_ANDROID
-        //_dir.x = _joystick.Horizontal;
-        //_dir.y = _joystick.Vertical;
+        _dir.x = _joystick.Horizontal;
+        _dir.y = _joystick.Vertical;
 #else
         _dir.x = Input.GetAxisRaw("Horizontal");
         _dir.y = Input.GetAxisRaw("Vertical");
@@ -37,5 +37,12 @@ public class PlayerMove : InteractiveBody
     }
     private void OnEnable() => AddFixedUpdate();
     private void OnDisable() => RemoveFixedUpdate();
-    private void OnDestroy() => RemoveFixedUpdate();
+
+    public static Action PlayerDestroy;
+    private void OnDestroy()
+    {
+        PlayerDestroy?.Invoke();
+        RemoveFixedUpdate();
+    }
+
 }

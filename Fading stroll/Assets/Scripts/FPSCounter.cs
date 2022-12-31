@@ -12,8 +12,8 @@ public class FPSCounter : MonoCache
     private void Start()
     {
 #if UNITY_ANDROID
-        //QualitySettings.vSyncCount = 0;
-        //Application.targetFrameRate = 300;
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 300;
 #endif
         _updateRate = _updateUIRate;
     }
