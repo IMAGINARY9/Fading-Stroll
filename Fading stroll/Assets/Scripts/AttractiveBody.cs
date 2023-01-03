@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,8 @@ public class AttractiveBody : InteractiveBody
     [SerializeField] private Overlap _attractionZone;
     protected override void LateAwake()
     {
-        var radius = Mathf.Log(rb.mass, 3) * Mathf.Log(transform.localScale.z * 100f, 2);
+        var radius = 4f * (float)Math.Log(rb.mass) - 2f;
         _attractionZone.Radius = radius;
-
 
         if(TryGetComponent<AttractiveBodyParticles>(out var particles))
             particles.Particles(radius);
