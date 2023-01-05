@@ -10,9 +10,12 @@ public class AttractiveBody : InteractiveBody
     {
         var radius = 4f * (float)Math.Log(rb.mass) - 2f;
         _attractionZone.Radius = radius;
-
+        
         if(TryGetComponent<AttractiveBodyParticles>(out var particles))
             particles.Particles(radius);
+
+        if(TryGetComponent<BlackHoleParticles>(out var bhparticles))
+            bhparticles.Particles(radius);
     }
 
 
