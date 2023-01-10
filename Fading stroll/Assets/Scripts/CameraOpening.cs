@@ -7,6 +7,7 @@ public class CameraOpening : MonoCache
     [SerializeField] private float _orthographicSize;
     [SerializeField] private float _openingSpeed;
     private CinemachineVirtualCamera _vcam;
+    public float OpeningSpeed { get => _openingSpeed; set => _openingSpeed = value; }
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class CameraOpening : MonoCache
     {
         while (_vcam.m_Lens.OrthographicSize < _orthographicSize)
         {
-            _vcam.m_Lens.OrthographicSize += _openingSpeed * Time.deltaTime;
+            _vcam.m_Lens.OrthographicSize += OpeningSpeed * Time.deltaTime;
             yield return null;
         }
     }
