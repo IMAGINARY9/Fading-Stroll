@@ -14,6 +14,8 @@ public static class Vect
         vector.x < value && vector.y < value;
     public static bool LowEqual(Vector2 vector, float number) =>
         vector.x <= number && vector.y <= number;
+    public static bool HighEqual(Vector2 vector, float number) =>
+        vector.x >= number && vector.y >= number;
     public static Vector2 RandVector(Vector2 min, Vector2 max) =>
         new(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
     public static Vector3 RandVector(float min, float max) =>
