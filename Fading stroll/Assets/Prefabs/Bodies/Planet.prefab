@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2518551688353164635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2518551688831125757}
@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 2518551688831125754}
   - component: {fileID: 2518551688831125755}
   - component: {fileID: 997632606816530192}
+  - component: {fileID: 6955731026996034549}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -165,7 +166,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+  m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -187,7 +188,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 7.853982
+  m_Mass: 39.26991
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -252,6 +253,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sizeLim: {x: 1, y: 3}
   _densityLim: {x: 10, y: 15}
+--- !u!114 &6955731026996034549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518551688831125745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef117b70cbada418aeb3bb899b2f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorRange: 0.075
 --- !u!1 &2518551689383015844
 GameObject:
   m_ObjectHideFlags: 0
