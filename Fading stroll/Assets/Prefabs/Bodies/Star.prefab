@@ -252,8 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8e1a89b3fae8e42a5881486ccabefe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sizeLim: {x: 2, y: 4}
-  _densityLim: {x: 15, y: 25}
+  _sizeLim: {x: 3, y: 5}
+  _densityLim: {x: 20, y: 30}
 --- !u!114 &1651011128944795295
 MonoBehaviour:
   m_ObjectHideFlags: 0

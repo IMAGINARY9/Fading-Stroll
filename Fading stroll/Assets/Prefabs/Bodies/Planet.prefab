@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sizeLim: {x: 1, y: 3}
-  _densityLim: {x: 10, y: 15}
+  _densityLim: {x: 10, y: 20}
 --- !u!114 &6955731026996034549
 MonoBehaviour:
   m_ObjectHideFlags: 0

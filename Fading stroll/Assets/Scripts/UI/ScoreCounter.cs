@@ -9,7 +9,7 @@ public class ScoreCounter : MonoCache
     private void Start() => Score = 0;
     public override void OnTick()
     {
-        Score += Time.deltaTime * 2f;
+        Score += Time.deltaTime;
         _counter.SetText(((int)Score).ToString());
     }
 }

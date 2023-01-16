@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class PlayerMove : InteractiveBody
 {
-    [SerializeField] private float _acceleration;
-    [SerializeField] private float _decceleration;
-    [SerializeField] private float _velPower;
-    [SerializeField] private float _speed;
     [SerializeField] private Joystick _joystick;
+    [SerializeField] private PlayerMoveConfig _config;
+    private float Acceleration => _config.Acceleration * Mass;
+    private float Decceleration => _config.Decceleration * Mass;
+    private float VelPower => _config.VelPower;
+    private float Speed => _config.Speed * Mass + 5;
+
 
     private Vector2 _dir;
     public Vector2 Path => rb.velocity.normalized;
@@ -24,14 +26,15 @@ public class PlayerMove : InteractiveBody
         _dir.y = Input.GetAxisRaw("Vertical");
 #endif
         Move();
+        Debug.DrawLine(transform.position, rb.velocity + (Vector2)transform.position, Color.red);
     }
 
     private void Move()
     {
-        Vector2 targetSpeed = _dir.normalized * _speed;
+        Vector2 targetSpeed = _dir.normalized * Speed;
         Vector2 speedDif = targetSpeed - rb.velocity;
-        float accelRate = Vect.Low(Vect.Abs(targetSpeed), 0.01f) ? _decceleration : _acceleration;
-        Vector2 movement = Vect.Pow(Vect.Abs(speedDif) * accelRate, _velPower) * Vect.Sign(speedDif);
+        float accelRate = Vect.Low(Vect.Abs(targetSpeed), 0.01f) ? Decceleration : Acceleration;
+        Vector2 movement = Vect.Pow(Vect.Abs(speedDif) * accelRate, VelPower) * Vect.Sign(speedDif);
 
         rb.AddForce(movement, ForceMode2D.Force);
     }

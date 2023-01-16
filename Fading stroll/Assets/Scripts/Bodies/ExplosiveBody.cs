@@ -20,7 +20,9 @@ public class ExplosiveBody : InteractiveBody
         var pShape = particles.shape;
         pShape.radius = scale;
 
-        var pBurst = new ParticleSystem.Burst(0f, (short)(Mass * 100));
+        var pCount = (short)(Mass * 100);
+        var pBurst = new ParticleSystem.Burst(0f, pCount >= 0 ? pCount : short.MaxValue);
+
         particles.emission.SetBurst(0, pBurst);
 
         particles.startSize = scale * 0.2f;
