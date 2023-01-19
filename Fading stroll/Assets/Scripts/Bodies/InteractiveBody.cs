@@ -9,9 +9,11 @@ public abstract class InteractiveBody : MonoCache
     {
         rb = GetComponent<Rigidbody2D>();
         OnAwake();
-        rb.AddForce(Vect.RandomVector * Random.Range(1f, transform.localScale.z * 10f), ForceMode2D.Impulse);
+        Dash();
         Invoke(nameof(LateAwake), 0.1f);
     }
+    private void Dash() => 
+        rb.AddForce(Vect.RandomVector * Random.Range(1f, transform.localScale.z * Mass), ForceMode2D.Impulse);
     protected virtual void OnAwake() { }
     protected virtual void LateAwake() { }
 }
