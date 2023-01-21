@@ -21,7 +21,7 @@ public class AttractedBody : ExplosiveBody, IAttracted
         if (col.collider.TryGetComponent<InteractiveBody>(out var body))
             if (body.Mass >= rb.mass)
             {
-                if (body.TryGetComponent<ScoreCollector>(out var collector))
+                if (body.TryGetComponent<IScoreCollector>(out var collector))
                     collector.AddScore(rb.mass);
 
                 Explode();
