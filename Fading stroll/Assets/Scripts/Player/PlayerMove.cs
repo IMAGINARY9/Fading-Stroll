@@ -40,12 +40,6 @@ public class PlayerMove : InteractiveBody
     }
     private void OnEnable() => AddFixedUpdate();
     private void OnDisable() => RemoveFixedUpdate();
-
-    public static Action PlayerDestroy;
-    private void OnDestroy()
-    {
-        PlayerDestroy?.Invoke();
-        RemoveFixedUpdate();
-    }
+    private void OnDestroy() => RemoveFixedUpdate();
 
 }

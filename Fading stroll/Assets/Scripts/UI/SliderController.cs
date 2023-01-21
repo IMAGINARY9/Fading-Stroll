@@ -7,7 +7,7 @@ public class SliderController : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
     [SerializeField] private TextMeshProUGUI _sliderNumber;
-    [SerializeField] private PlayerLevel _playerLevel;
+    [SerializeField] private DataHolder _playerLevel;
     private void Awake()
     {
         _slider.value = _playerLevel.Level * 10;
