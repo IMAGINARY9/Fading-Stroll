@@ -30,7 +30,7 @@ public class PlayerUpgrade : MonoCache
 
     private void UpdateSize()
     {
-        var newSize = 75 * _playerData.Level + 425;
+        var newSize = 50 * _playerData.Level + 450;
         _button.sizeDelta = new Vector2(newSize, newSize);
     }
     private bool EnoughFunds => _playerData.Score >= _price;
