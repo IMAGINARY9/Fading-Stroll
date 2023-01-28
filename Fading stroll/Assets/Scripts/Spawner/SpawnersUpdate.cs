@@ -15,12 +15,12 @@ public class SpawnersUpdate : MonoCache
     {
         _sc = GetComponent<SpawnersContainer>();
         PreSpawn();
-        InvokeRepeating(nameof(NewSpawn), 1, _tickRate);
+        InvokeRepeating(nameof(NewSpawn), 3, _tickRate);
     }
 
     private void PreSpawn()
     {
-        var startSize = _safeSize * 5f;
+        var startSize = _safeSize * 10f;
         for (int i = 0; i < _startCount; i++)
         {
             Vector2 newPos = new(Random.Range(-startSize, startSize),

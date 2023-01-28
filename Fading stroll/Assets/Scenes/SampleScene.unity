@@ -804,9 +804,9 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
+  m_SensorSize: {x: 1, y: 1}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 0.3501038
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -817,7 +817,7 @@ Camera:
   far clip plane: 1000
   field of view: 110
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 0.000001
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -841,7 +841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000014305115, y: 0.00000059604645, z: -10}
+  m_LocalPosition: {x: -1.1368684e-13, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1418,7 +1418,6 @@ MonoBehaviour:
   _levelText: {fileID: 1045274376}
   _priceText: {fileID: 778091397}
   _scoreIndicator: {fileID: 907436838}
-  _resetScoreButton: {fileID: 1456686256}
   _tapText: {fileID: 1956943448}
 --- !u!1 &832292596
 GameObject:
@@ -7129,6 +7128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1178741571}
   - component: {fileID: 1178741572}
+  - component: {fileID: 1178741573}
   m_Layer: 0
   m_Name: Background Img
   m_TagString: Untagged
@@ -7143,9 +7143,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178741570}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 70, y: 70, z: 70}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -7203,6 +7203,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1178741573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178741570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce339cedbb3661542b9300318150640e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1254331803
 GameObject:
   m_ObjectHideFlags: 0
@@ -7243,7 +7255,7 @@ MonoBehaviour:
   m_Follow: {fileID: 232637927}
   m_Lens:
     FieldOfView: 110
-    OrthographicSize: 10
+    OrthographicSize: 0.000001
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -7267,7 +7279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254331803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000014305115, y: 0.00000059604645, z: -10}
+  m_LocalPosition: {x: -1.1368684e-13, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7287,8 +7299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce11b87e83d800143b7dee9476d72944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _orthographicSize: 10
   _openingSpeed: 3
+  _dataHolder: {fileID: 1146135215}
 --- !u!1 &1281651839
 GameObject:
   m_ObjectHideFlags: 0
@@ -7603,11 +7615,11 @@ MonoBehaviour:
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.15
-  m_DeadZoneHeight: 0.15
+  m_DeadZoneHeight: 0.1
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_SoftZoneHeight: 0.65
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -8473,7 +8485,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 50, y: 50, z: 1}
+    m_Scale: {x: 70, y: 35, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0

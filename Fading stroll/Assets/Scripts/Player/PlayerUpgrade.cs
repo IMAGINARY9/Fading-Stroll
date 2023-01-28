@@ -42,7 +42,8 @@ public class PlayerUpgrade : MonoCache
             _price = int.MaxValue;
             _ui.UpdatePriceText(_playerData.Score + "/max");
         }
-        _ui.UpdateResetDataButton(!defaultPrice);
+        _ui.CanResetProgress = !defaultPrice;
+        _ui.UpdateResetProgressButton();
         _ui.UpdateTapText(EnoughFunds);
         UpdateScore();
     }
