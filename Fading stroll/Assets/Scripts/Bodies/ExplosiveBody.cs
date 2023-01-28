@@ -5,13 +5,11 @@ public class ExplosiveBody : InteractiveBody
 {
     [SerializeField] protected ParticleSystem destroyParticles;
 
-    [System.Obsolete]
     protected void Explode()
     {
         Particles();
         Destroy(gameObject);
     }
-    [System.Obsolete]
     private void Particles()
     {
         var particles = Instantiate(destroyParticles, transform.position, Quaternion.identity);
@@ -25,9 +23,10 @@ public class ExplosiveBody : InteractiveBody
 
         particles.emission.SetBurst(0, pBurst);
 
-        particles.startSize = scale * 0.2f;
+        var pMain = particles.main;
+        pMain.startSize = scale * 0.2f;
 
         particles.Play();
-        Destroy(particles.gameObject, particles.startLifetime);
+        Destroy(particles.gameObject, pMain.startLifetime.constant);
     }
 }

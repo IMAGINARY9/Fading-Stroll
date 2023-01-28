@@ -19,6 +19,8 @@ public class UI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _priceText;
     [SerializeField] private TextMeshProUGUI _scoreIndicator;
     [SerializeField] private GameObject _tapText;
+    [SerializeField] private GameObject _moveButton;
+    [SerializeField] private TextMeshProUGUI _moveText;
 
     private void Start()
     {
@@ -28,7 +30,7 @@ public class UI : MonoBehaviour
     }
 
     public bool CanResetProgress { get; set; }
-    public bool _isGame;
+    private bool _isGame;
     private void Reset()
     {
         _isGame = false;
@@ -38,15 +40,15 @@ public class UI : MonoBehaviour
         _levelSlider.SetActive(true);
         _scoreText.SetActive(false);
         _joystic.SetActive(false);
+        _moveButton.SetActive(false);
     }
-
     public void UpdateButtonSize(float size) => _button.sizeDelta = new Vector2(size, size);
     public void UpdateLevelIndicator(float level) => _levelText.SetText(level.ToString().Replace(',', '.'));
     public void UpdateScoreIndicator(float score) => _scoreIndicator.SetText(score.ToString());
-    public void UpdateResetProgressButton(){
-        if (!_isGame) _resetProgressButton.SetActive(CanResetProgress);
-    }
+    public void UpdateResetProgressButton() => _resetProgressButton.SetActive(!_isGame && CanResetProgress);
     public void UpdateTapText(bool s) => _tapText.SetActive(s);
+    public void UpdateMoveButton(bool s) => _moveButton.SetActive(_isGame && s);
+    public void UpdateMoveText(float size) => _moveText.fontSize = size <= 650f ? size : 650f;
     public void UpdatePriceText(string msg) => _priceText.SetText(msg);
     public void UpdateButtonColor(bool s)
     {

@@ -15,7 +15,6 @@ public class AttractedBody : ExplosiveBody, IAttracted
         rb.AddForce(F * -dir);
     }
 
-    [Obsolete]
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.collider.TryGetComponent<InteractiveBody>(out var body))
