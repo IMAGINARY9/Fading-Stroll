@@ -5,10 +5,22 @@ using UnityEngine;
 
 public class DataHolder : MonoCache
 {
+    private bool _mute;
     private int _score;
     private float _level;
     public Action LevelChanged;
     public Action ScoreChanged;
+
+    public bool Mute 
+    { 
+        get => _mute; 
+        set 
+        {
+            _mute = value;
+            Save();
+        } 
+    }
+
     public float Level
     {
         get => _level;
@@ -39,6 +51,7 @@ public class DataHolder : MonoCache
     private void Load()
     {
         var data = SaveSystem.LoadData();
+        Mute = data == null || data.Mute;
         Score = data == null ? 0 : data.Score;
         Level = data == null ? 1f : data.Level;
     }

@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject _levelSlider;
     [SerializeField] private GameObject _scoreText;
     [SerializeField] private GameObject _joystic;
+    [SerializeField] private GameObject _soundButton;
 
     [Header("OnUpdate")]
     [SerializeField] private RectTransform _button;
@@ -24,23 +25,26 @@ public class UI : MonoBehaviour
 
     private void Start()
     {
-        PlayerInfo.PlayerDestroy += Reset;
+        PlayerInfo.PlayerDestroy += OnPlayerDestroy;
         _resetProgressButton.SetActive(false);
         _isGame = true;
     }
 
     public bool CanResetProgress { get; set; }
     private bool _isGame;
-    private void Reset()
+    private void OnPlayerDestroy()
     {
         _isGame = false;
-        PlayerInfo.PlayerDestroy -= Reset;
         _resetProgressButton.SetActive(CanResetProgress);
+        
         _center.SetActive(true);
         _levelSlider.SetActive(true);
+        _soundButton.SetActive(true);
+
         _scoreText.SetActive(false);
         _joystic.SetActive(false);
         _moveButton.SetActive(false);
+        PlayerInfo.PlayerDestroy -= OnPlayerDestroy;
     }
     public void UpdateButtonSize(float size) => _button.sizeDelta = new Vector2(size, size);
     public void UpdateLevelIndicator(float level) => _levelText.SetText(level.ToString().Replace(',', '.'));
