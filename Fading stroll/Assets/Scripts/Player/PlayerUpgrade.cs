@@ -13,6 +13,7 @@ public class PlayerUpgrade : MonoCache
         _playerData.LevelChanged += UpdateLevel;
         _playerData.ScoreChanged += UpdatePrice;
         UpdateLevel();
+        _ui.UpdateGuide(_playerData.Level == 1);
     }
 
     public void Upgrade()

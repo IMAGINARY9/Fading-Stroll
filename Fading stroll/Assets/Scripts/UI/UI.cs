@@ -22,6 +22,7 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject _tapText;
     [SerializeField] private GameObject _moveButton;
     [SerializeField] private TextMeshProUGUI _moveText;
+    [SerializeField] private GameObject _guide;
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class UI : MonoBehaviour
         _resetProgressButton.SetActive(false);
         _isGame = true;
     }
-
+    public void UpdateGuide(bool s) => _guide.SetActive(s);
     public bool CanResetProgress { get; set; }
     private bool _isGame;
     private void OnPlayerDestroy()
