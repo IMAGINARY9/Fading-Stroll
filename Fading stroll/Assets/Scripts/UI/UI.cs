@@ -28,20 +28,20 @@ public class UI : MonoBehaviour
     {
         PlayerInfo.PlayerDestroy += OnPlayerDestroy;
         _resetProgressButton.SetActive(false);
-        _isGame = true;
+        IsGame = true;
     }
-    public void UpdateGuide(bool s) => _guide.SetActive(s);
     public bool CanResetProgress { get; set; }
-    private bool _isGame;
+    static public bool IsGame { get; private set; }
     private void OnPlayerDestroy()
     {
-        _isGame = false;
+        IsGame = false;
         _resetProgressButton.SetActive(CanResetProgress);
         
         _center.SetActive(true);
         _levelSlider.SetActive(true);
         _soundButton.SetActive(true);
 
+        _guide.SetActive(false);
         _scoreText.SetActive(false);
         _joystic.SetActive(false);
         _moveButton.SetActive(false);
@@ -50,9 +50,15 @@ public class UI : MonoBehaviour
     public void UpdateButtonSize(float size) => _button.sizeDelta = new Vector2(size, size);
     public void UpdateLevelIndicator(float level) => _levelText.SetText(level.ToString().Replace(',', '.'));
     public void UpdateScoreIndicator(float score) => _scoreIndicator.SetText(score.ToString());
-    public void UpdateResetProgressButton() => _resetProgressButton.SetActive(!_isGame && CanResetProgress);
+    public void UpdateResetProgressButton() => _resetProgressButton.SetActive(!IsGame && CanResetProgress);
     public void UpdateTapText(bool s) => _tapText.SetActive(s);
-    public void UpdateMoveButton(bool s) => _moveButton.SetActive(_isGame && s);
+    public void UpdateGuide(bool s) => _guide.SetActive(s);
+    public void UpdateMoveButton(bool s)
+    {
+        _moveButton.SetActive(IsGame && s);
+        if(_moveButton.activeSelf)
+            _guide.SetActive(false);
+    }
     public void UpdateMoveText(float size) => _moveText.fontSize = size <= 650f ? size : 650f;
     public void UpdatePriceText(string msg) => _priceText.SetText(msg);
     public void UpdateButtonColor(bool s)

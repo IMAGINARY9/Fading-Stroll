@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameMenu : MonoBehaviour
+public class GameMenu : MonoCache
 {
     public void Restart()
     {

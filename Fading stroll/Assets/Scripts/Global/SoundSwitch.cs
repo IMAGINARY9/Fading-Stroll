@@ -12,10 +12,15 @@ public class SoundSwitch : MonoBehaviour
         _sound.mute = _dataHolder.Mute;
         if (_sound.mute) ReactivateIcons();
     }
-    public void Switch()
+    public void SwitchSave()
     {
         _sound.mute = !_sound.mute;
         _dataHolder.Mute = _sound.mute;
+        ReactivateIcons();
+    }
+    public void Switch()
+    {
+        _sound.mute = !_sound.mute;
         ReactivateIcons();
     }
 
