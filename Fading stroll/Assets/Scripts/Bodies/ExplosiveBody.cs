@@ -5,7 +5,7 @@ public class ExplosiveBody : InteractiveBody
 {
     [SerializeField] protected ParticleSystem destroyParticles;
 
-    protected void Explode()
+    public void Explode()
     {
         Particles();
         Destroy(gameObject);
@@ -25,6 +25,9 @@ public class ExplosiveBody : InteractiveBody
 
         var pMain = particles.main;
         pMain.startSize = scale * 0.2f;
+
+        pMain.startColor = new ParticleSystem.MinMaxGradient(
+            Color.white, GetComponent<SpriteRenderer>().color);
 
         particles.Play();
         Destroy(particles.gameObject, pMain.startLifetime.constant);
