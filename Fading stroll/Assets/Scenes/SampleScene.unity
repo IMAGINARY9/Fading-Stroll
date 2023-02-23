@@ -8260,6 +8260,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerData: {fileID: 1146135215}
   _ui: {fileID: 815460645}
+  _lastStagePrice: 45000
+  _maxPrice: 50000
+  _sliderPrice: 100000
 --- !u!4 &1090180018
 Transform:
   m_ObjectHideFlags: 0

@@ -31,14 +31,15 @@ public class UI : MonoBehaviour
         IsGame = true;
     }
     public bool CanResetProgress { get; set; }
+    public bool SliderUnlock { get; set; }
     static public bool IsGame { get; private set; }
     private void OnPlayerDestroy()
     {
         IsGame = false;
         _resetProgressButton.SetActive(CanResetProgress);
+        _levelSlider.SetActive(SliderUnlock);
         
         _center.SetActive(true);
-        _levelSlider.SetActive(true);
         _soundButton.SetActive(true);
 
         _guide.SetActive(false);
@@ -51,6 +52,7 @@ public class UI : MonoBehaviour
     public void UpdateLevelIndicator(float level) => _levelText.SetText(level.ToString().Replace(',', '.'));
     public void UpdateScoreIndicator(float score) => _scoreIndicator.SetText(score.ToString());
     public void UpdateResetProgressButton() => _resetProgressButton.SetActive(!IsGame && CanResetProgress);
+    public void UpdateLevelSlider() => _levelSlider.SetActive(!IsGame && SliderUnlock);
     public void UpdateTapText(bool s) => _tapText.SetActive(s);
     public void UpdateGuide(bool s) => _guide.SetActive(s);
     public void UpdateMoveButton(bool s)

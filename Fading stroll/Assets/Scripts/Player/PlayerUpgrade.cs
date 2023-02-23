@@ -6,6 +6,9 @@ public class PlayerUpgrade : MonoCache
 {
     [SerializeField] private DataHolder _playerData;
     [SerializeField] private UI _ui;
+    [SerializeField] private int _lastStagePrice;
+    [SerializeField] private int _maxPrice;
+    [SerializeField] private int _sliderPrice;
     private int _price;
 
     private void Start()
@@ -32,10 +35,10 @@ public class PlayerUpgrade : MonoCache
     private void UpdatePrice()
     {
         int price = Mathf.CeilToInt(63.5962f * Mathf.Pow(_playerData.Level + 0.1f, 4.1182f));
-        bool defaultPrice = price <= 50000;
+        bool defaultPrice = price <= _maxPrice;
         if (defaultPrice)
         {
-            _price = price <= 45000 ? price : 50000;
+            _price = price <= _lastStagePrice ? price : _maxPrice;
             _ui.UpdatePriceText(_playerData.Score + "/" + _price);
         }
         else
@@ -45,6 +48,10 @@ public class PlayerUpgrade : MonoCache
         }
         _ui.CanResetProgress = !defaultPrice;
         _ui.UpdateResetProgressButton();
+
+        _ui.SliderUnlock = _playerData.Score >= _sliderPrice;
+        _ui.UpdateLevelSlider();
+
         _ui.UpdateTapText(EnoughFunds);
         UpdateScore();
     }
