@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d638c16eca0614a80cc71be1d07654, type: 3}
   m_Name: PlayerMoveConfig
   m_EditorClassIdentifier: 
-  <Acceleration>k__BackingField: 2.5
+  <Acceleration>k__BackingField: 3
   <Decceleration>k__BackingField: 0.275
   <VelPower>k__BackingField: 0.8
-  <Speed>k__BackingField: 0.01
+  <Speed>k__BackingField: 0.015
